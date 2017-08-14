@@ -199,7 +199,9 @@
                                         <td><span>Delivery Type</span>{{element.gate_list[0].delivery_type}}</td>
                                         <td class="text-center" width="150">
                                             <a href="javascript:void(0);" id="menu-toggle" data-toggle="collapse" data-target="#gate_open{{list1[$index]}}">
-                                                <i class="fa fa-angle-right fa-2x"></i></a>
+                                                <i class="fa fa-chevron-right fa-2x"></i>
+                                                <i class="fa fa-chevron-down fa-2x hidden-lg"></i>
+                                            </a>
                                         </td>
                                     </tr>
                                 </table>
@@ -271,6 +273,17 @@
             $(".navbar-toggle").css("right", "0px");
             $("#close_toggle").hide();
             $("#menu_icon").show();
+        });
+        $(function() {
+            $('.fa').click(function() {
+                $('.fa-chevron-right').hide();
+                $('.fa-chevron-down').removeClass('hidden-lg');
+            });
+            $('.fa-chevron-down').click(function() {
+                $('.fa-chevron-down').addClass('hidden-lg');
+                $('.fa-chevron-right').show();
+            })
+
         });
     </script>
 </body>
