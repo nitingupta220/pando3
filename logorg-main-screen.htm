@@ -187,7 +187,7 @@
                             </th>
                         </tr>
                         <tr>
-                            <td><span>Street</span>{{element.address}}<br> {{element.street}} </td>
+                            <td id="address"><span>Street</span>{{element.address}}<br>{{element.street}}</td>
                             <td>
                                 <table width="100%">
                                     <tr>
@@ -197,7 +197,10 @@
                                         <td><span>Country</span>{{element.country}}</td>
                                         <td><span>Region</span>{{element.region}} {{element.country}}</td>
                                         <td><span>Delivery Type</span>{{element.gate_list[0].delivery_type}}</td>
-                                        <td class="text-center" width="150"><a href="javascript:void(0);" data-toggle="collapse" data-target="#gate_open{{list1[$index]}}"><i class="glyphicon glyphicon-menu-right"></i></a></td>
+                                        <td class="text-center" width="150">
+                                            <a href="javascript:void(0);" id="menu-toggle" data-toggle="collapse" data-target="#gate_open{{list1[$index]}}">
+                                                <i class="fa fa-angle-right fa-2x"></i></a>
+                                        </td>
                                     </tr>
                                 </table>
                             </td>
@@ -221,8 +224,8 @@
 
                                 <table width="100%" class="gate-details">
                                     <tr>
-                                        <td><span>Gate Name</span> {{element.gate_list[0].name}}</td>
-                                        <td><span>Street</span>{{element.gate_list[0].address}}</td>
+                                        <td><span>Gate Name</span>{{element.gate_list[0].name}}</td>
+                                        <td id="address2"><span>Street</span>{{element.gate_list[0].address}}</td>
                                         <td><span>City</span>{{element.gate_list[0].city}}</td>
                                         <td><span>State</span>{{element.gate_list[0].state}}</td>
                                         <td><span>Pincode</span>{{element.gate_list[0].pincode}}</td>

@@ -11,7 +11,6 @@
 
                 $scope.mydata = response.data;
 
-                console.log(response.data[0].gate_list);
 
             });
         $scope.list1 = [1, 2, 3, 4];
