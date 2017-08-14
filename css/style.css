@@ -450,6 +450,10 @@ table.details #address {
     width: 35%;
 }
 
+table.details #city {
+    width: 15%;
+}
+
 @media screen and (max-width: 850px) {
     table.details #address {
         width: 0;
