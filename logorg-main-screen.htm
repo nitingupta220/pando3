@@ -173,7 +173,7 @@
                             <th align="right">
                                 <div class="col-sm-3"></div>
                                 <div class="col-sm-5">Phone Number : {{element.office_phone}}</div>
-                                <div class="col-sm-3">SAPID : SAP1234</div>
+                                <div class="col-sm-3">SAPID : {{element.ref_id}}</div>
                                 <div class="col-sm-1">
                                     <div class="dropdown">
                                         <a href="#" class="dropdown-toggle open_menu" data-toggle="dropdown"></a>
@@ -195,12 +195,11 @@
                                         <td><span>State</span>{{element.state}}</td>
                                         <td><span>Pincode</span>{{element.zipcode}}</td>
                                         <td><span>Country</span>{{element.country}}</td>
-                                        <td><span>Region</span>{{element.region}} {{element.country}}</td>
+                                        <td><span>Region</span>{{element.region}} </td>
                                         <td><span>Delivery Type</span>{{element.gate_list[0].delivery_type}}</td>
                                         <td class="text-center" width="150">
-                                            <a href="javascript:void(0);" id="menu-toggle" data-toggle="collapse" data-target="#gate_open{{list1[$index]}}">
-                                                <i class="fa fa-chevron-right fa-2x"></i>
-                                                <i class="fa fa-chevron-down fa-2x hidden-lg"></i>
+                                            <a href="javascript:void(0);" class="faq-links" data-toggle="collapse" data-target="#gate_open{{list1[$index]}}">
+                                                <i class="fa toggler fa-angle-right fa-3x"></i>
                                             </a>
                                         </td>
                                     </tr>
@@ -226,7 +225,7 @@
 
                                 <table width="100%" class="gate-details">
                                     <tr>
-                                        <td><span>Gate Name</span>{{element.gate_list[0].name}}</td>
+                                        <td><span>Gate Name</span>{{element.gate_list[0].gate_number}}</td>
                                         <td id="address2"><span>Street</span>{{element.gate_list[0].address}}</td>
                                         <td><span>City</span>{{element.gate_list[0].city}}</td>
                                         <td><span>State</span>{{element.gate_list[0].state}}</td>
@@ -274,16 +273,17 @@
             $("#close_toggle").hide();
             $("#menu_icon").show();
         });
-        $(function() {
-            $('.fa').click(function() {
-                $('.fa-chevron-right').hide();
-                $('.fa-chevron-down').removeClass('hidden-lg');
-            });
-            $('.fa-chevron-down').click(function() {
-                $('.fa-chevron-down').addClass('hidden-lg');
-                $('.fa-chevron-right').show();
-            })
 
+        //TOGGLE FONT AWESOME ON CLICK
+        $('.faq-links').click(function() {
+            var collapsed = $(this).find('i').hasClass('fa-angle-right');
+
+            $('.faq-links').find('i').removeClass('fa-angle-down');
+
+            $('.faq-links').find('i').addClass('fa-angle-right');
+            if (collapsed) {
+                $(this).find('i').toggleClass('fa-angle-right fa-angle-down')
+            }
         });
     </script>
 </body>

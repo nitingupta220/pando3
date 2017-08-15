@@ -454,6 +454,18 @@ table.details #city {
     width: 15%;
 }
 
+table.details a:hover {
+    color: blue;
+}
+
+table.details a:not(:hover) {
+    color: blue;
+}
+
+table.details a:clicked {
+    color: blue;
+}
+
 @media screen and (max-width: 850px) {
     table.details #address {
         width: 0;
