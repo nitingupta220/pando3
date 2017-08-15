@@ -274,17 +274,20 @@
             $("#menu_icon").show();
         });
 
-        //TOGGLE FONT AWESOME ON CLICK
-        $('.faq-links').click(function() {
-            var collapsed = $(this).find('i').hasClass('fa-angle-right');
+        $(function() {
+            var counter = 0;
+            $('.faq-links').click(function() {
+                if (counter === 0) {
+                    $(this).find('i').removeClass('fa-angle-right').addClass('fa-angle-down');
+                    counter++;
+                } else {
+                    $(this).find('i').removeClass('fa-angle-down').addClass('fa-angle-right');
+                    counter = 0;
+                }
 
-            $('.faq-links').find('i').removeClass('fa-angle-down');
+            })
 
-            $('.faq-links').find('i').addClass('fa-angle-right');
-            if (collapsed) {
-                $(this).find('i').toggleClass('fa-angle-right fa-angle-down')
-            }
-        });
+        })
     </script>
 </body>
 
